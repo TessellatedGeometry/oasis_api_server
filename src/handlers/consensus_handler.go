@@ -14,7 +14,6 @@ import (
 	"github.com/oasisprotocol/oasis-core/go/common/crypto/signature"
 	consensus "github.com/oasisprotocol/oasis-core/go/consensus/api"
 	mint_api "github.com/oasisprotocol/oasis-core/go/consensus/cometbft/api"
-	"github.com/oasisprotocol/oasis-core/go/consensus/cometbft/crypto"
 )
 
 // loadConsensusClient loads consensus client and returns it
@@ -549,7 +548,7 @@ func PublicKeyToAddress(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// Convert the consensusKey into a signature PublicKey
-	tendermintKey := crypto.PublicKeyToTendermint(consensusPublicKey)
+	tendermintKey := crypto.crypto.PublicKeyToComet(consensusPublicKey)
 	cryptoAddress := tendermintKey.Address()
 	// Responds with transactions retrieved above
 	lgr.Info.Println("Request at /api/consensus/pubkeyaddress responding " +
