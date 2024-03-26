@@ -16,8 +16,8 @@ import (
 	sentry_api "github.com/oasisprotocol/oasis-core/go/sentry/api"
 	staking_api "github.com/oasisprotocol/oasis-core/go/staking/api"
 	document_api "github.com/oasisprotocol/oasis-core/go/genesis/api"
-	tmed "github.com/tendermint/tendermint/crypto"
-	mint_types "github.com/tendermint/tendermint/types"
+	tmed "github.com/cometbft/cometbft/crypto"
+	mint_types "github.com/cometbft/cometbft/types"
 )
 
 // StakingEvents responds with a list of events
